@@ -113,45 +113,45 @@ $tableBorder:                       $grayLight; // table and cell border
 
 // Buttons
 // -------------------------
-$btnBackground:                     $grayLightest;
+$btnBackground:                     $grayLighter;
 $btnBackgroundHighlight:            $btnBackground;
-$btnBorder:                         adjust-color($btnBackground, $lightness: -20%);
+$btnBorder:                         shade($btnBackground, 10);
 
 $btnPrimaryBackground:              $primary;
 $btnPrimaryBackgroundHighlight:     $btnPrimaryBackground;
 
-$btnInfoBackground:                 #26ADE4;
-$btnInfoBackgroundHighlight:        darken($btnInfoBackground, 10%);
+$btnInfoBackground:                 $secondary;
+$btnInfoBackgroundHighlight:        $btnInfoBackground;
 
-$btnSuccessBackground:              $green;
-$btnSuccessBackgroundHighlight:     darken($btnSuccessBackground, 10%);
+$btnSuccessBackground:              $primaryMute;
+$btnSuccessBackgroundHighlight:     $btnSuccessBackground;
 
-$btnWarningBackground:              lighten($orange, 15%);
-$btnWarningBackgroundHighlight:     $orange;
+$btnWarningBackground:              $secondaryCompliment;
+$btnWarningBackgroundHighlight:     $btnWarningBackground;
 
-$btnDangerBackground:               #ee5f5b;
-$btnDangerBackgroundHighlight:      #bd362f;
+$btnDangerBackground:               $primaryTriadWarm;
+$btnDangerBackgroundHighlight:      $btnDangerBackground;
 
-$btnInverseBackground:              #444;
-$btnInverseBackgroundHighlight:     $grayDarker;
+$btnInverseBackground:              $grayDark;
+$btnInverseBackgroundHighlight:     $btnInverseBackground;
 
 
 // Forms
 // -------------------------
 $inputBackground:               $white;
-$inputBorder:                   #ccc;
+$inputBorder:                   shade($inputBackground, 15);
 $inputBorderRadius:             $baseBorderRadius;
 $inputDisabledBackground:       $grayLighter;
-$formActionsBackground:         #f5f5f5;
+$formActionsBackground:         $wellBackground;
 $inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 
 // Dropdowns
 // -------------------------
 $dropdownBackground:            $white;
-$dropdownBorder:                rgba(0,0,0,.2);
-$dropdownDividerTop:            #e5e5e5;
-$dropdownDividerBottom:         $white;
+$dropdownBorder:                shade($inputBackground, 15);
+$dropdownDividerTop:            shade($inputBackground, 15);
+$dropdownDividerBottom:         $dropdownBackground;
 
 $dropdownLinkColor:             $grayDark;
 $dropdownLinkColorHover:        $white;
@@ -192,7 +192,7 @@ $placeholderText:         $grayLight;
 // Hr border color
 // -------------------------
 $hrBorder:                $grayLighter;
-$playgroundBorder:        #D4D4D4;
+$playgroundBorder:        $grayLight;
 
 
 // Horizontal forms & lists
@@ -235,7 +235,7 @@ $navbarInverseLinkBackgroundActive:      shade($navbarInverseBackground, 5);
 $navbarInverseSearchBackground:          $grayLightest;
 $navbarInverseSearchBackgroundFocus:     $white;
 $navbarInverseSearchBorder:              shade($navbarInverseSearchBackground, 5);
-$navbarInverseSearchPlaceholderColor:    $grayLight;
+$navbarInverseSearchPlaceholderColor:    $placeholderText;
 
 $navbarInverseBrandColor:                $navbarInverseLinkColor;
 
