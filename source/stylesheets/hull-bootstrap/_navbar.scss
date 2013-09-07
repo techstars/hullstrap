@@ -1,5 +1,6 @@
 .navbar-inner {
-  @include background-image(linear-gradient(rgba(white,0.1),rgba(black,0.1)));
+  // uncomment to give some dimension
+  // @include background-image(linear-gradient(rgba(white,0.1),rgba(black,0.1)));
 }
 
 

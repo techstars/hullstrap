@@ -7,12 +7,10 @@ gem 'activesupport'
 gem 'slim'
 
 gem 'animation' # css animation plugin
-# gem "sass", "~> 3.2.5"
-gem "sass"
+gem "sass", "~> 3.2.5"
 gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :tag => 'v0.13.alpha.4'
 gem 'sass-getunicode'
-# gem 'bootstrap-sass', '2.3.1.0'
-gem "bootstrap-sass-rails", "~> 3.0.0.2"
+gem 'bootstrap-sass', '2.3.1.0'
 
 gem 'libv8', '~> 3.11.8'
 gem 'execjs'

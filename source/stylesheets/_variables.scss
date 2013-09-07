@@ -9,13 +9,36 @@
 
 // Grays
 // -------------------------
-$black:                 #000;
-$grayDarker:            #222;
-$grayDark:              #333;
-$gray:                  #555;
-$grayLight:             #999;
-$grayLighter:           #eee;
-$white:                 #fff;
+$black: rgb(0,0,0);
+$white: rgb(255,255,255);
+$gray: lighten($black, 50%);
+$grayLight: lighten($black, 75%);
+$grayLighter: lighten($black, 85%);
+$grayLightest: lighten($black, 95%);
+$grayDark: lighten($black, 25%);
+$grayDarker: lighten($black, 15%);
+$grayDarkest: lighten($black, 5%);
+
+// brand colors
+$primary: rgb(34,178,77);
+$primaryLight: lighten($primary, 25);
+$primaryDark: darken($primary, 25);
+$secondary: rgb(110,145,163);
+$secondaryLight: lighten($secondary, 25);
+$secondaryDark: darken($secondary, 25);
+$primaryMute: tint($primary, 20);
+
+// utility colors
+$alert: rgb(180,20,30);
+$success: rgb(20,180,30);
+
+// complimentary colors
+$primaryCompliment: adjust-hue($primary, 180deg);
+$secondaryCompliment: adjust-hue($secondary, 180deg);
+
+// analogous colors
+$primaryTriadWarm: adjust-hue($primary, -135deg);
+$primaryTriadCool: adjust-hue($primary, 135deg);
 
 
 // Accent colors
@@ -31,8 +54,8 @@ $purple:                #7a43b6;
 
 // Wells
 // -------------------------
-$wellBackground:        #f1f3f5;
-$wellBackgroundDark:    #373f4a;
+$wellBackground:        $grayLightest;
+$wellBackgroundDark:    $gray;
 
 // Scaffolding
 // -------------------------
@@ -42,14 +65,14 @@ $textColor:             $grayDark;
 
 // Links
 // -------------------------
-$linkColor:             #008cdd;
-$linkColorHover:        darken($linkColor, 15%);
+$linkColor:             $primary;
+$linkColorHover:        shade($linkColor, 20);
 
 
 // Typography
 // -------------------------
-$sansFontFamily:        sans-serif;
-$serifFontFamily:       "proxima-nova", sans-serif;
+$sansFontFamily:        'Helvetica Neue', Helvetica, Arial, sans-serif;;
+$serifFontFamily:       $sansFontFamily;
 $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 $baseFontSize:          15px;
@@ -57,7 +80,7 @@ $baseFontFamily:        $sansFontFamily;
 $baseLineHeight:        22px;
 $altFontFamily:         $serifFontFamily;
 
-$headingsFontFamily:    "proxima-nova", sans-serif; // empty to use BS default, $baseFontFamily
+$headingsFontFamily:    $sansFontFamily; // empty to use BS default, $baseFontFamily
 $headingsFontWeight:    bold;    // instead of browser default, bold
 $headingsColor:         inherit; // empty to use BS default, $textColor
 
@@ -84,15 +107,15 @@ $borderRadiusSmall:     2px;
 // Tables
 // -------------------------
 $tableBackground:                   transparent; // overall background-color
-$tableBackgroundAccent:             #f9f9f9; // for striping
-$tableBackgroundHover:              #f5f5f5; // for hover
-$tableBorder:                       #ddd; // table and cell border
+$tableBackgroundAccent:             $grayLightest; // for striping
+$tableBackgroundHover:              $grayLighter; // for hover
+$tableBorder:                       $grayLight; // table and cell border
 
 // Buttons
 // -------------------------
-$btnBackground:                     $wellBackground;
-$btnBackgroundHighlight:            darken($wellBackground, 10%);
-$btnBorder:                         adjust-color($wellBackground, $lightness: -20%);
+$btnBackground:                     $grayLightest;
+$btnBackgroundHighlight:            $btnBackground;
+$btnBorder:                         adjust-color($btnBackground, $lightness: -20%);
 
 $btnPrimaryBackground:              $blue;
 $btnPrimaryBackgroundHighlight:     adjust_hue($btnPrimaryBackground, 20%);
@@ -184,35 +207,35 @@ $navbarCollapseWidth:             979px;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
 $navbarHeight:                    54px;
-$navbarBackgroundHighlight:       $wellBackground;
-$navbarBackground:                $wellBackground;
-$navbarBorder:                    darken($navbarBackground, 20%);
+$navbarBackground:                $primaryMute;
+$navbarBackgroundHighlight:       $navbarBackground;
+$navbarBorder:                    shade($navbarBackground, 10);
 
-$navbarText:                      $grayDark;
-$navbarLinkColor:                 $grayDark;
-$navbarLinkColorHover:            $gray;
-$navbarLinkColorActive:           $grayDarker;
+$navbarText:                      $white;
+$navbarLinkColor:                 $navbarText;
+$navbarLinkColorHover:            $grayLightest;
+$navbarLinkColorActive:           $grayLighter;
 $navbarLinkBackgroundHover:       transparent;
-$navbarLinkBackgroundActive:      darken($navbarBackground, 5%);
+$navbarLinkBackgroundActive:      shade($navbarBackground, 5);
 
 $navbarBrandColor:                $navbarLinkColor;
 
 // Inverted navbar
-$navbarInverseBackground:                $wellBackgroundDark;
-$navbarInverseBackgroundHighlight:       $wellBackgroundDark;
-$navbarInverseBorder:                    $wellBackgroundDark;
+$navbarInverseBackground:                $secondary;
+$navbarInverseBackgroundHighlight:       $navbarInverseBackground;
+$navbarInverseBorder:                    shade($navbarInverseBackground, 10);
 
-$navbarInverseText:                      $grayLight;
-$navbarInverseLinkColor:                 $grayLight;
-$navbarInverseLinkColorHover:            $grayLighter;
-$navbarInverseLinkColorActive:           $navbarInverseLinkColorHover;
+$navbarInverseText:                      $white;
+$navbarInverseLinkColor:                 $navbarInverseText;
+$navbarInverseLinkColorHover:            $grayLightest;
+$navbarInverseLinkColorActive:           $grayLighter;
 $navbarInverseLinkBackgroundHover:       transparent;
-$navbarInverseLinkBackgroundActive:      $navbarInverseBackground;
+$navbarInverseLinkBackgroundActive:      shade($navbarInverseBackground, 5);
 
-$navbarInverseSearchBackground:          lighten($navbarInverseBackground, 25%);
+$navbarInverseSearchBackground:          $grayLightest;
 $navbarInverseSearchBackgroundFocus:     $white;
-$navbarInverseSearchBorder:              $navbarInverseBackground;
-$navbarInverseSearchPlaceholderColor:    #ccc;
+$navbarInverseSearchBorder:              shade($navbarInverseSearchBackground, 5);
+$navbarInverseSearchPlaceholderColor:    $grayLight;
 
 $navbarInverseBrandColor:                $navbarInverseLinkColor;
 
