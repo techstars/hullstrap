@@ -117,8 +117,8 @@ $btnBackground:                     $grayLightest;
 $btnBackgroundHighlight:            $btnBackground;
 $btnBorder:                         adjust-color($btnBackground, $lightness: -20%);
 
-$btnPrimaryBackground:              $blue;
-$btnPrimaryBackgroundHighlight:     adjust_hue($btnPrimaryBackground, 20%);
+$btnPrimaryBackground:              $primary;
+$btnPrimaryBackgroundHighlight:     $btnPrimaryBackground;
 
 $btnInfoBackground:                 #26ADE4;
 $btnInfoBackgroundHighlight:        darken($btnInfoBackground, 10%);
