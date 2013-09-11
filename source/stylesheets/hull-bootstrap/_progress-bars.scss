@@ -2,7 +2,8 @@
 .progress {
  border-radius:1em;
  @include background-image(
-   linear-gradient($wellBackground, darken($wellBackground, 5%))
+   // linear-gradient($wellBackground, darken($wellBackground, 5%))
+   none
  );
 }
 
@@ -10,7 +11,8 @@
 // Bar of progress
 .progress .bar {
   @include background-image(
-    linear-gradient($blue, $blueDark)
+    // linear-gradient($blue, $blueDark)
+    none
   );
   @include background-clip(padding-box);
   border-radius:1em;
