@@ -77,10 +77,19 @@ ul.the-icons li{
 }
 @import "fontcustom";
 
+// use box sizing on everything
 * {
   @include box-sizing(border-box);
 }
+// use primary color for highlight
+::selection {
+  background: $primary;
+  }
+::-moz-selection {
+  background: $primary;
+}
 
+// move this to navbar
 .navbar-search {
   position: relative;
   > input.search-query {
@@ -103,12 +112,13 @@ ul.the-icons li{
   } 
 }
 
+// profile specific styles
 .user-main {
   background: $bodyBackground;
-  &.span9 {
-    width: calc(100% - 280px);
-    border-right: 1px solid rgb(222, 222, 222);
-  }
+  // &.span9 {
+  //   width: calc(100% - 280px);
+  //   border-right: 1px solid rgb(222, 222, 222);
+  // }
 }
 
 .user-about {
@@ -127,15 +137,6 @@ ul.the-icons li{
     @include adjust-font-size-to(14px, 1);
     color: $gray;
     position: relative;
-    // &:before {
-    //   content: '"';
-    //   position: absolute;
-    //   top: 10px;
-    //   left: 5px;
-    //   @include adjust-font-size-to(32px, 1);
-    //   font-family: $serifFontFamily;
-    //   font-style: italic;
-    // }
   }
 }
 
@@ -151,17 +152,28 @@ ul.the-icons li{
     }
   }
 }
-
-.fixed {
-  position: fixed;
-}
-.user-actions,
-.user-meta {
-  max-width: 280px;
-  width: 100%;
-  > .fixed {
+@media all and (min-width: 1115px) {
+  .fixed {
+    position: fixed;
+  }
+  .user-actions,
+  .user-meta {
     max-width: 280px;
     width: 100%;
+    > .fixed {
+      max-width: 280px;
+      width: 100%;
+    }
+  }
+  .user-main {
+    &.span9 {
+      width: calc(100% - 280px);
+      border-right: 1px solid rgb(222, 222, 222);
+    }
+  }
+  .user-meta .super-dl,
+  .stats-dl {
+    width: 250px;
   }
 }
 
@@ -195,7 +207,7 @@ ul.the-icons li{
 }
 
 .stats-dl {
-  width: 250px;
+  // width: 250px;
   dl {
     position: relative;
     float: left;
@@ -224,7 +236,7 @@ ul.the-icons li{
 
 .user-meta {
   .super-dl {
-    width: 250px;
+    // width: 250px;
     dd {
       a {
         color: inherit;
