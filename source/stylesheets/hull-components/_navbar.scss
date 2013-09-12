@@ -1,8 +1,45 @@
-.nav > li > a > img{
-    width: 22px;
-    margin-right: 6px;
-    float: left;
-    border-radius: 100%;
+.navbar {
+  .nav {
+    > li {
+      padding-bottom: 12px;
+      > a {
+        > .avatar {
+          width: 30px;
+          height: 30px;
+          margin-right: 6px;
+          margin-top: -5px;
+          float: left;
+          overflow: hidden;
+          @include border-radius($borderRadiusRound);
+        }
+      }
+      li {
+        float: none;
+      }
+    }
+    &.user-dropdown {
+      a {
+        padding: 10px 10px 0px;
+        margin-top: -10px;
+      }
+    }
+    .navbar-search {
+    .search-query {
+      min-height: 30px;
+      }
+    }
+  }
+  .brand {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - (64px * .5));
+    float: none;
+    margin: 0;
+    padding: 0;
+    &.small {
+      max-width: 64px;
+    }
+  }
 }
 
 

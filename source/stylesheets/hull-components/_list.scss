@@ -85,17 +85,64 @@
 .list-organizations{
 
 }
-  .list-organizations-item {
-     > h4{
-         @extend %ellipsis;
-         a{color:$grayDark;}
-     }
-     code{@extend %ellipsis;}
-     .btn-group{
-      @include position(relative, 10px 0 0 0);
-      > .btn{opacity:.75;}
+.list-organizations-item {
+   > h4{
+       @extend %ellipsis;
+       a{color:$grayDark;}
+   }
+   code{@extend %ellipsis;}
+   .btn-group{
+    @include position(relative, 10px 0 0 0);
+    > .btn{opacity:.75;}
+  }
+  .icon-cog{
+    color:$black;
+  }
+}
+ul, ol {
+  &.divide {
+    > li {
+      // padding: 10px 20px;
+      border-bottom: 1px solid $hrBorder;
+      &:first-child {
+        border-top: 1px solid $hrBorder;
+      }
+      > a,
+      > span {
+        display: block;
+        @include adjust-font-size-to(14px, 1);
+        padding: 10px 20px;
+        @include transition(ease all .3s);
+        &:hover {
+          text-decoration: none;
+        }
+        > [class*="icon"] {
+          color: $grayLight;
+          margin-right: 5px;
+        }
+        .icon-twitter {
+          color: $twitter;
+        }
+        .icon-facebook {
+          color: $facebook;
+        }
+        .icon-linkedin {
+          color: $linkedin;
+        }
+        .icon-angellist {
+          color: $grayDarker;
+        }
+      }
     }
-    .icon-cog{
-      color:$black;
+    &.meta-wrap {
+      padding-top: 0;
+      > li {
+        margin-right: -20px;
+        margin-left: -20px;
+      }
     }
   }
+}
+
+
+

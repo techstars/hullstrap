@@ -52,6 +52,12 @@ $orange:                #f89406;
 $pink:                  #c3325f;
 $purple:                #7a43b6;
 
+// Branded Colors
+// -------------------------
+$linkedin: #0e76a8;
+$facebook: #3b5998;
+$twitter: #00acee;
+
 // Wells
 // -------------------------
 $wellBackground:        $grayLightest;
@@ -72,7 +78,7 @@ $linkColorHover:        shade($linkColor, 20);
 // Typography
 // -------------------------
 $sansFontFamily:        'Helvetica Neue', Helvetica, Arial, sans-serif;;
-$serifFontFamily:       $sansFontFamily;
+$serifFontFamily:       'Georgia', serif;
 $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 $baseFontSize:          15px;
@@ -102,6 +108,7 @@ $paddingMini:           0 6px;   // 22px
 $baseBorderRadius:      4px;
 $borderRadiusLarge:     4px;
 $borderRadiusSmall:     2px;
+$borderRadiusRound:			100%;
 
 
 // Tables

@@ -58,6 +58,7 @@ activate :livereload
 page "*", :layout => :layout
 page "opensource/*", :layout => :layout
 page "admin/*", :layout => :admin
+page "profile/*", :layout => :profile
 
 require 'lib/retina.rb'
 require 'lib/random-color.rb'
