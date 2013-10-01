@@ -9,13 +9,36 @@
 
 // Grays
 // -------------------------
-$black:                 #000;
-$grayDarker:            #222;
-$grayDark:              #333;
-$gray:                  #555;
-$grayLight:             #999;
-$grayLighter:           #eee;
-$white:                 #fff;
+$black: rgb(0,0,0);
+$white: rgb(255,255,255);
+$gray: lighten($black, 50%);
+$grayLight: lighten($black, 75%);
+$grayLighter: lighten($black, 85%);
+$grayLightest: lighten($black, 95%);
+$grayDark: lighten($black, 25%);
+$grayDarker: lighten($black, 15%);
+$grayDarkest: lighten($black, 5%);
+
+// brand colors
+$primary: rgb(34,178,77);
+$primaryLight: lighten($primary, 25);
+$primaryDark: darken($primary, 25);
+$secondary: rgb(110,145,163);
+$secondaryLight: lighten($secondary, 25);
+$secondaryDark: darken($secondary, 25);
+$primaryMute: tint($primary, 20);
+
+// utility colors
+$alert: rgb(180,20,30);
+$success: rgb(20,180,30);
+
+// complimentary colors
+$primaryCompliment: adjust-hue($primary, 180deg);
+$secondaryCompliment: adjust-hue($secondary, 180deg);
+
+// analogous colors
+$primaryTriadWarm: adjust-hue($primary, -135deg);
+$primaryTriadCool: adjust-hue($primary, 135deg);
 
 
 // Accent colors
@@ -29,10 +52,16 @@ $orange:                #f89406;
 $pink:                  #c3325f;
 $purple:                #7a43b6;
 
+// Branded Colors
+// -------------------------
+$linkedin: #0e76a8;
+$facebook: #3b5998;
+$twitter: #00acee;
+
 // Wells
 // -------------------------
-$wellBackground:        #f1f3f5;
-$wellBackgroundDark:    #373f4a;
+$wellBackground:        $grayLightest;
+$wellBackgroundDark:    $gray;
 
 // Scaffolding
 // -------------------------
@@ -42,14 +71,14 @@ $textColor:             $grayDark;
 
 // Links
 // -------------------------
-$linkColor:             #008cdd;
-$linkColorHover:        darken($linkColor, 15%);
+$linkColor:             $primary;
+$linkColorHover:        shade($linkColor, 20);
 
 
 // Typography
 // -------------------------
-$sansFontFamily:        sans-serif;
-$serifFontFamily:       "proxima-nova", sans-serif;
+$sansFontFamily:        'Helvetica Neue', Helvetica, Arial, sans-serif;;
+$serifFontFamily:       'Georgia', serif;
 $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 $baseFontSize:          15px;
@@ -57,7 +86,7 @@ $baseFontFamily:        $sansFontFamily;
 $baseLineHeight:        22px;
 $altFontFamily:         $serifFontFamily;
 
-$headingsFontFamily:    "proxima-nova", sans-serif; // empty to use BS default, $baseFontFamily
+$headingsFontFamily:    $sansFontFamily; // empty to use BS default, $baseFontFamily
 $headingsFontWeight:    bold;    // instead of browser default, bold
 $headingsColor:         inherit; // empty to use BS default, $textColor
 
@@ -79,56 +108,57 @@ $paddingMini:           0 6px;   // 22px
 $baseBorderRadius:      4px;
 $borderRadiusLarge:     4px;
 $borderRadiusSmall:     2px;
+$borderRadiusRound:			100%;
 
 
 // Tables
 // -------------------------
 $tableBackground:                   transparent; // overall background-color
-$tableBackgroundAccent:             #f9f9f9; // for striping
-$tableBackgroundHover:              #f5f5f5; // for hover
-$tableBorder:                       #ddd; // table and cell border
+$tableBackgroundAccent:             $grayLightest; // for striping
+$tableBackgroundHover:              $grayLighter; // for hover
+$tableBorder:                       $grayLight; // table and cell border
 
 // Buttons
 // -------------------------
-$btnBackground:                     $wellBackground;
-$btnBackgroundHighlight:            darken($wellBackground, 10%);
-$btnBorder:                         adjust-color($wellBackground, $lightness: -20%);
+$btnBackground:                     $grayLighter;
+$btnBackgroundHighlight:            $btnBackground;
+$btnBorder:                         shade($btnBackground, 10);
 
-$btnPrimaryBackground:              $blue;
-$btnPrimaryBackgroundHighlight:     adjust_hue($btnPrimaryBackground, 20%);
+$btnPrimaryBackground:              $primary;
+$btnPrimaryBackgroundHighlight:     $btnPrimaryBackground;
 
-$btnInfoBackground:                 #26ADE4;
-$btnInfoBackgroundHighlight:        darken($btnInfoBackground, 10%);
+$btnInfoBackground:                 $secondary;
+$btnInfoBackgroundHighlight:        $btnInfoBackground;
 
-$btnSuccessBackground:              $green;
-$btnSuccessBackgroundHighlight:     darken($btnSuccessBackground, 10%);
+$btnSuccessBackground:              $primaryMute;
+$btnSuccessBackgroundHighlight:     $btnSuccessBackground;
 
-$btnWarningBackground:              lighten($orange, 15%);
-$btnWarningBackgroundHighlight:     $orange;
+$btnWarningBackground:              $secondaryCompliment;
+$btnWarningBackgroundHighlight:     $btnWarningBackground;
 
-$btnDangerBackground:               #ee5f5b;
-$btnDangerBackgroundHighlight:      #bd362f;
+$btnDangerBackground:               $primaryTriadWarm;
+$btnDangerBackgroundHighlight:      $btnDangerBackground;
 
-$btnInverseBackground:              #444;
-$btnInverseBackgroundHighlight:     $grayDarker;
+$btnInverseBackground:              $grayDark;
+$btnInverseBackgroundHighlight:     $btnInverseBackground;
 
 
 // Forms
 // -------------------------
 $inputBackground:               $white;
-$inputBorder:                   #ccc;
+$inputBorder:                   shade($inputBackground, 15);
 $inputBorderRadius:             $baseBorderRadius;
 $inputDisabledBackground:       $grayLighter;
-$formActionsBackground:         #f5f5f5;
+$formActionsBackground:         $wellBackground;
 $inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 
 // Dropdowns
 // -------------------------
 $dropdownBackground:            $white;
-$dropdownBorder:                rgba(0,0,0,.2);
-$dropdownDividerTop:            #e5e5e5;
-$dropdownDividerBottom:         $white;
+$dropdownBorder:                shade($inputBackground, 15);
+$dropdownDividerTop:            shade($inputBackground, 15);
+$dropdownDividerBottom:         $dropdownBackground;
 
 $dropdownLinkColor:             $grayDark;
 $dropdownLinkColorHover:        $white;
@@ -169,7 +199,7 @@ $placeholderText:         $grayLight;
 // Hr border color
 // -------------------------
 $hrBorder:                $grayLighter;
-$playgroundBorder:        #D4D4D4;
+$playgroundBorder:        $grayLight;
 
 
 // Horizontal forms & lists
@@ -184,35 +214,35 @@ $navbarCollapseWidth:             979px;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
 $navbarHeight:                    54px;
-$navbarBackgroundHighlight:       $wellBackground;
-$navbarBackground:                $wellBackground;
-$navbarBorder:                    darken($navbarBackground, 20%);
+$navbarBackground:                $primaryMute;
+$navbarBackgroundHighlight:       $navbarBackground;
+$navbarBorder:                    shade($navbarBackground, 10);
 
-$navbarText:                      $grayDark;
-$navbarLinkColor:                 $grayDark;
-$navbarLinkColorHover:            $gray;
-$navbarLinkColorActive:           $grayDarker;
+$navbarText:                      $white;
+$navbarLinkColor:                 $navbarText;
+$navbarLinkColorHover:            $grayLightest;
+$navbarLinkColorActive:           $grayLighter;
 $navbarLinkBackgroundHover:       transparent;
-$navbarLinkBackgroundActive:      darken($navbarBackground, 5%);
+$navbarLinkBackgroundActive:      shade($navbarBackground, 5);
 
 $navbarBrandColor:                $navbarLinkColor;
 
 // Inverted navbar
-$navbarInverseBackground:                $wellBackgroundDark;
-$navbarInverseBackgroundHighlight:       $wellBackgroundDark;
-$navbarInverseBorder:                    $wellBackgroundDark;
+$navbarInverseBackground:                $secondary;
+$navbarInverseBackgroundHighlight:       $navbarInverseBackground;
+$navbarInverseBorder:                    shade($navbarInverseBackground, 10);
 
-$navbarInverseText:                      $grayLight;
-$navbarInverseLinkColor:                 $grayLight;
-$navbarInverseLinkColorHover:            $grayLighter;
-$navbarInverseLinkColorActive:           $navbarInverseLinkColorHover;
+$navbarInverseText:                      $white;
+$navbarInverseLinkColor:                 $navbarInverseText;
+$navbarInverseLinkColorHover:            $grayLightest;
+$navbarInverseLinkColorActive:           $grayLighter;
 $navbarInverseLinkBackgroundHover:       transparent;
-$navbarInverseLinkBackgroundActive:      $navbarInverseBackground;
+$navbarInverseLinkBackgroundActive:      shade($navbarInverseBackground, 5);
 
-$navbarInverseSearchBackground:          lighten($navbarInverseBackground, 25%);
+$navbarInverseSearchBackground:          $grayLightest;
 $navbarInverseSearchBackgroundFocus:     $white;
-$navbarInverseSearchBorder:              $navbarInverseBackground;
-$navbarInverseSearchPlaceholderColor:    #ccc;
+$navbarInverseSearchBorder:              shade($navbarInverseSearchBackground, 5);
+$navbarInverseSearchPlaceholderColor:    $placeholderText;
 
 $navbarInverseBrandColor:                $navbarInverseLinkColor;
 

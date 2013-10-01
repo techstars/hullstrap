@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Techstars - Ari Newman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- build:css hullstrap.css -->
+    <link href="/stylesheets/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+    <link rel="icon" type="image/gif" href="/images/favicon.gif">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar-fixed-top">
+    <%= partial "nav/top-bar" %>
+
+    <div class="container featurette featurette-well">
+      <div class="wrapper row seamless">
+      
+        <div class="span3 user-actions">
+          <%= partial "nav/side-bar" %>
+        </div>
+        
+        <div class="span9 user-main">
+          <%=yield%>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

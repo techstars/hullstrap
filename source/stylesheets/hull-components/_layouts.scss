@@ -13,5 +13,29 @@ body{
   padding-top:30px;
   padding-bottom:30px;
 }
-  .navbar-fixed-top + .wrapper{ margin-top:$navbarHeight; }
 
+.navbar-fixed-top + .wrapper{
+	margin-top:$navbarHeight;
+	padding-top: 0;
+	&.row {
+		margin-left: 0;
+	}
+}
+
+.meta-wrap {
+	padding: 10px 20px;
+	.control-group {
+		&.row {
+			margin-left: 0;
+		}
+		[class*="span"] {
+			position: relative;
+		}
+	}
+	&.featurette {
+		> * {
+			padding: 10px 20px;
+			font-weight: bold;
+		}
+	}
+}

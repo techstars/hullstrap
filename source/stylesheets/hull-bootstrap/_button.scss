@@ -2,12 +2,14 @@
 // ------------------
 @mixin button($background-color){
     $text-color: hsl(0, 0, 100%);
-    @if lightness($background-color) > 70% {
+    @if lightness($background-color) > 75% {
         $text-color:       hsl(0, 0, 20%);
     }
     background-color:$background-color;
-    @include background-image(linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.1)));
+    // @include background-image(linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.1)));
+    @include background-image(none);
     color:$text-color;
+    border-bottom-color: shade($background-color, 10);
     &:hover,
     &:focus,
     &:active{
@@ -19,6 +21,8 @@
     &[disabled] {
       background-color:$background-color;
     }
+    @include box-shadow(none);
+    @include text-shadow(none);
 };
 
 .btn{

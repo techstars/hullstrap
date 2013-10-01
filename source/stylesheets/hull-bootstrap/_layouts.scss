@@ -1,0 +1,60 @@
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container,
+.container {
+	max-width: 1280px;
+	width: 100%;
+	> .row {
+		margin-left: 0;
+		&.wrapper {
+			padding-top: 54px;
+			padding-bottom: 0;
+		}
+	}
+}
+.row {
+	@extend .row-fluid;
+}
+.seamless {
+	margin-left: 0;
+	> [class*="span"] {
+		margin-left: 0;
+	}
+	$col: 100%/12;
+	> .span1 {
+		width: $col;
+	}
+	> .span2 {
+		width: $col * 2;
+	}
+	> .span3 {
+		width: $col * 3;	
+	}
+	> .span4 {
+		width: $col * 4;
+	}
+	> .span5 {
+		width: $col * 5;
+	}
+	> .span6 {
+		width: $col * 6;
+	}
+	> .span7 {
+		width: $col * 7;
+	}
+	> .span8 {
+		width: $col * 8;
+	}
+	> .span9 {
+		width: $col * 9;
+	}
+	> .span10 {
+		width: $col * 10;
+	}
+	> .span11 {
+		width: $col * 11;
+	}
+	> .span12 {
+		width: $col * 12;
+	}
+}

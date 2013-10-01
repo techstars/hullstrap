@@ -1,5 +1,7 @@
 .navbar-inner {
-  @include background-image(linear-gradient(rgba(white,0.1),rgba(black,0.1)));
+  position: relative;
+  // uncomment to give some dimension
+  // @include background-image(linear-gradient(rgba(white,0.1),rgba(black,0.1)));
 }
 
 
@@ -11,7 +13,7 @@
   > a{
     font-weight:bold;
     font-size:13px;
-    border-radius:1em;
+    // border-radius:1em;
     padding:$paddingSmaller;
   }
 }
@@ -54,4 +56,8 @@
 .navbar .divider-vertical{
     display:none;
 }
+
+
+
+
 
